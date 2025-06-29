@@ -1,45 +1,68 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router"; 
-import { FaDownload, FaBars, FaTimes, FaHome, FaUser, FaProjectDiagram, FaEnvelope } from "react-icons/fa";
+import {
+  FaDownload,
+  FaBars,
+  FaTimes,
+  FaHome,
+  FaUser,
+  FaProjectDiagram,
+  FaEnvelope,
+} from "react-icons/fa";
 import logo from "/my-logo.png";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = (
     <>
-      <NavLink
-        to="/"
-        className={({ isActive }) =>
-          isActive ? "text-cyan-400 font-semibold flex items-center gap-2" : "hover:text-cyan-300 flex items-center gap-2"
-        }
+      <Link
+        to="hero"
+        smooth={true}
+        duration={500}
+        offset={-70}
+        spy={true}
+        activeClass="text-cyan-400 font-semibold"
+        className="cursor-pointer hover:text-cyan-300 flex items-center gap-2"
       >
         <FaHome /> Home
-      </NavLink>
-      <NavLink
-        to="/about"
-        className={({ isActive }) =>
-          isActive ? "text-cyan-400 font-semibold flex items-center gap-2" : "hover:text-cyan-300 flex items-center gap-2"
-        }
+      </Link>
+
+      <Link
+        to="about"
+        smooth={true}
+        duration={500}
+        offset={-70}
+        spy={true}
+        activeClass="text-cyan-400 font-semibold"
+        className="cursor-pointer hover:text-cyan-300 flex items-center gap-2"
       >
         <FaUser /> About
-      </NavLink>
-      <NavLink
-        to="/projects"
-        className={({ isActive }) =>
-          isActive ? "text-cyan-400 font-semibold flex items-center gap-2" : "hover:text-cyan-300 flex items-center gap-2"
-        }
+      </Link>
+
+      <Link
+        to="projects"
+        smooth={true}
+        duration={500}
+        offset={-70}
+        spy={true}
+        activeClass="text-cyan-400 font-semibold"
+        className="cursor-pointer hover:text-cyan-300 flex items-center gap-2"
       >
         <FaProjectDiagram /> Projects
-      </NavLink>
-      <NavLink
-        to="/contact"
-        className={({ isActive }) =>
-          isActive ? "text-cyan-400 font-semibold flex items-center gap-2" : "hover:text-cyan-300 flex items-center gap-2"
-        }
+      </Link>
+
+      <Link
+        to="contact"
+        smooth={true}
+        duration={500}
+        offset={-70}
+        spy={true}
+        activeClass="text-cyan-400 font-semibold"
+        className="cursor-pointer hover:text-cyan-300 flex items-center gap-2"
       >
         <FaEnvelope /> Contact
-      </NavLink>
+      </Link>
     </>
   );
 
@@ -48,7 +71,7 @@ const Navbar = () => {
       <div className="navbar max-w-7xl mx-auto px-4 py-3">
         {/* Logo */}
         <div className="flex-1">
-          <Link to="/" className="flex items-center">
+          <Link to="hero" className="flex items-center cursor-pointer">
             <img
               src={logo}
               alt="Logo"
@@ -58,12 +81,14 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex gap-6 text-base items-center">{navLinks}</div>
+        <div className="hidden md:flex gap-6 text-base items-center">
+          {navLinks}
+        </div>
 
         {/* Resume Button */}
         <div className="hidden md:block ml-4">
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/file/d/1zWBLLbANmZ0_Uupldw-0FR5cGeSgjCa1/view?usp=sharing"
             download
             className="btn btn-sm bg-gradient-to-r from-cyan-500 to-blue-600 text-white flex items-center gap-2 shadow-md hover:opacity-90"
           >

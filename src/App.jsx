@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
@@ -10,16 +14,23 @@ import Contact from './pages/Contact'
 
 function App() {
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,  
+      once: true,      
+    });
+  }, []);
+
   return (
     <div className='bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] text-white px-4'>
-     <Navbar></Navbar>
-    <Hero></Hero>
-    <About></About>
-    <Skills></Skills>
-    <MyProject></MyProject>
-    <Education></Education>
-    <Contact></Contact>
-     <Footer></Footer>
+     <Navbar />
+     <Hero />
+     <About />
+     <Skills />
+     <MyProject />
+     <Education />
+     <Contact />
+     <Footer />
     </div>
   )
 }

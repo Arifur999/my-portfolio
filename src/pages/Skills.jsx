@@ -16,6 +16,7 @@ import {
   SiVite,
 } from "react-icons/si";
 import Marquee from "react-fast-marquee";
+import { motion } from "framer-motion";
 
 const skills = [
   { name: "HTML", icon: <FaHtml5 />, color: "text-orange-500" },
@@ -35,52 +36,57 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section
-      id="skills"
-      className=" text-white px-4 lg:pb-16 md:pb-10 pb-6"
-    >
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl sm:text-5xl pb-12  font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-500 drop-shadow-lg">
+    <section id="skills" className="text-white px-4 lg:pb-16 md:pb-10 pb-6">
+      <motion.div
+        className="max-w-6xl mx-auto text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.h2
+          className="text-4xl sm:text-5xl pb-12 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-500 drop-shadow-lg"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
           My Skills & Tools
-        </h2>
+        </motion.h2>
 
         {/* Line 1 - Left to Right */}
-        <Marquee
-          gradient={false}
-          speed={40}
-          pauseOnHover={true}
-          className="mb-6 space-x-6"
-        >
+        <Marquee gradient={false} speed={40} pauseOnHover={true} className="mb-6 space-x-6">
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={`line1-${index}`}
-              className="bg-[#1e293b] border border-cyan-500 rounded-lg p-6 flex flex-col items-center justify-center min-w-[120px] sm:min-w-[140px] mx-2 hover:scale-105 hover:shadow-[0_0_20px_#00ffe0] transition duration-300"
+              whileHover={{ scale: 1.1 }}
+              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="bg-[#1e293b] border border-cyan-500 rounded-lg p-6 flex flex-col items-center justify-center min-w-[120px] sm:min-w-[140px] mx-2 hover:shadow-[0_0_20px_#00ffe0] transition duration-300"
             >
               <div className={`text-4xl mb-2 ${skill.color}`}>{skill.icon}</div>
               <p className="text-sm font-medium text-gray-300">{skill.name}</p>
-            </div>
+            </motion.div>
           ))}
         </Marquee>
 
         {/* Line 2 - Right to Left */}
-        <Marquee
-          gradient={false}
-          speed={40}
-          direction="right"
-          pauseOnHover={true}
-          className="space-x-6"
-        >
+        <Marquee gradient={false} speed={40} direction="right" pauseOnHover={true} className="space-x-6">
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={`line2-${index}`}
-              className="bg-[#1e293b] border border-cyan-500 rounded-lg p-6 flex flex-col items-center justify-center min-w-[120px] sm:min-w-[140px] mx-2 hover:scale-105 hover:shadow-[0_0_20px_#00ffe0] transition duration-300"
+              whileHover={{ scale: 1.1 }}
+              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="bg-[#1e293b] border border-cyan-500 rounded-lg p-6 flex flex-col items-center justify-center min-w-[120px] sm:min-w-[140px] mx-2 hover:shadow-[0_0_20px_#00ffe0] transition duration-300"
             >
               <div className={`text-4xl mb-2 ${skill.color}`}>{skill.icon}</div>
               <p className="text-sm font-medium text-gray-300">{skill.name}</p>
-            </div>
+            </motion.div>
           ))}
         </Marquee>
-      </div>
+      </motion.div>
     </section>
   );
 };
