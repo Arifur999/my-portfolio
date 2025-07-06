@@ -1,4 +1,11 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp, FaPhoneAlt, FaDiscord } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaWhatsapp,
+  FaPhoneAlt,
+  FaDiscord,
+} from "react-icons/fa";
 import logo from "/my-logo.png";
 import { motion } from "framer-motion";
 
@@ -54,9 +61,13 @@ const Footer = () => {
             >
               <FaGithub className="hover:text-cyan-400 transition" />
             </a>
-            {/* <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.linkedin.com/in/arifur-rahman-org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaLinkedin className="hover:text-cyan-400 transition" />
-            </a> */}
+            </a>
             <a href="mailto:arifur.rahman.we@gmail.com">
               <FaEnvelope className="hover:text-cyan-400 transition" />
             </a>

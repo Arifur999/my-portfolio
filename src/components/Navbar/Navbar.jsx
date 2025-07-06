@@ -88,7 +88,7 @@ const Navbar = () => {
         {/* Resume Button */}
         <div className="hidden md:block ml-4">
           <a
-            href="https://drive.google.com/file/d/1zWBLLbANmZ0_Uupldw-0FR5cGeSgjCa1/view?usp=sharing"
+            href="https://drive.google.com/file/d/10H6aa10IFRQiQN_ISOcwa9DoxPj9SSEz/view?usp=sharing"
             download
             className="btn btn-sm bg-gradient-to-r from-cyan-500 to-blue-600 text-white flex items-center gap-2 shadow-md hover:opacity-90"
           >
@@ -109,7 +109,7 @@ const Navbar = () => {
         <div className="md:hidden bg-[#1e293b] px-4 pb-4 space-y-3 text-base text-white">
           {navLinks}
           <a
-            href="/resume.pdf"
+            href="ekhon thik ase vaiya?"
             download
             className="btn btn-sm bg-gradient-to-r from-cyan-500 to-blue-600 w-full flex items-center justify-center gap-2 shadow-md"
           >

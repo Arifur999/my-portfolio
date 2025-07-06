@@ -1,4 +1,10 @@
-import { FaGithub, FaLinkedin, FaFacebook, FaDownload, FaDiscord } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaFacebook,
+  FaDownload,
+  FaDiscord,
+} from "react-icons/fa";
 import profileImg from "/my-img.jpg";
 import { motion } from "framer-motion";
 
@@ -62,7 +68,7 @@ const Hero = () => {
             transition={{ delay: 0.6 }}
           >
             <a
-              href="https://drive.google.com/file/d/1zWBLLbANmZ0_Uupldw-0FR5cGeSgjCa1/view?usp=sharing"
+              href="https://drive.google.com/file/d/10H6aa10IFRQiQN_ISOcwa9DoxPj9SSEz/view?usp=sharing"
               download
               className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full hover:opacity-90 shadow-lg flex items-center gap-2 transition duration-300"
             >
@@ -103,6 +109,13 @@ const Hero = () => {
               rel="noopener noreferrer"
             >
               <FaDiscord />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/arifur-rahman-org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin />
             </a>
           </motion.div>
         </motion.div>

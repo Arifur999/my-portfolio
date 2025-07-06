@@ -56,21 +56,21 @@ const MyProject = () => {
       ].map((project, i) => (
         <section
           key={project.title}
-          className="text-white px-4 py-20 bg-opacity-5"
+          className="text-white px-4 py-8  bg-opacity-5"
         >
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto ">
             <motion.div
-              className="text-center mb-12"
+              className="text-center lg:mb-8 mb-4"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={projectVariants}
             >
-              <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-500 drop-shadow-lg">
+              <h2 className="text-4xl  sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-500 drop-shadow-lg">
                 {i === 0 ? "My Featured Project" : ""}
               </h2>
               {i === 0 && (
-                <p className="text-gray-400 mt-2 text-sm">
+                <p className="text-gray-400 lg:mt-6 mt-2 text-sm">
                   Here's a showcase of one of my full-stack projects with key
                   challenges.
                 </p>
